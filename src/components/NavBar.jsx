@@ -20,8 +20,5 @@ function NavBar() {
 
 }
 
-function ItemListContainer() {
-
-}
 
 export default NavBar;
