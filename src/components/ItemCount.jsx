@@ -1,22 +1,39 @@
 import React, { useState, useEffect } from 'react';
 
+
+
+/*let producto = [
+    {stock: 10}
+]
+
+function calculo() {
+    return producto[0] - 1
+}
+  
+function calculomas(){
+    return producto[0] + 1
+}
+*/
+
+// console.log(calculo)
+
 export default function ItemCount({ desde }) {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const [x, setX] = useState(1);
 
-  //EN CADA CAMBIO (y la primera vez)
-  useEffect(() => {
     console.log('render');
-  });
 
-  //EN CADA CAMBIO DONDE CAMBIE LA X SOLAMENTE (y la primera vez)
-  useEffect(() => {
-    if (x == 0) {
-      alert('Valor inválido: cero o menos');
+    if (x >= 10) {
+      alert('Ya no queda stock! :(');
+      setX(1)
     }
-  }, [x]);
 
-  //console.log('render');
+    if (x <= 0) {
+      alert('Valor inválido: cero o menos! Contador restablecido!');
+      setX(1)
+    }
+
+  // Calculos
+    
   return (
     <>
       <div>
@@ -32,8 +49,12 @@ export default function ItemCount({ desde }) {
         </button>
         <button
           onClick={() => {
+            //calculo();
+            //console.log(producto[0])
             setX(x - 1);
-          }}
+          }
+        }
+        
         >
           Restar
         </button>
