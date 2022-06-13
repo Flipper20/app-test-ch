@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import CartWidget from './components/CartWidget';
-import Greeting from './components/Greeting';
-import ItemCount from './components/ItemCount'
+import { Navbar } from './componentes/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemListContainer } from './componentes/ItemListContainer';
 
 function App() {
-  return <div>
-    <h1>Brand - CoderHouse</h1>
-    <NavBar />
-    <CartWidget />
-    <Greeting />
-    <ItemCount />
-  </div>;
-}
+  const [cart, setCart] = useState(0);
 
-function ItemListContainer() {
-
+  return (
+    <div className="App">
+      <Navbar setCart = { setCart } />
+      <ItemListContainer cart = { cart }/>
+    </div>
+  );
 }
 
 export default App;
-
