@@ -19,7 +19,6 @@ export default function Item({ item }) {
         height:"12rem", 
         objectFit:"contain"}
 
-        //TODO: Buscar fotos similares de los productos.
     
   return (
     <Card style={{ width: '18rem'}} className="tarjeta">
